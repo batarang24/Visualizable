@@ -1,47 +1,35 @@
-function findCommonCharacters(str1, str2) { 
-    const arr1 = Array.from(new Set(str1)); 
-    const arr2 = Array.from(new Set(str2)); 
-   
-    return arr1.filter(char => arr2.includes(char)); 
-  } 
-
+import { useEffect, useState } from "react";
+import checkSubset from "../models/Subset";
+import dfa_table from "../models/Table";
+import union_arrays from "../models/Union";
+import dfaloop from "../models/dfacon";
+import State from "./State";
+var i=0;
 function DFA(props)
 {
-    console.log(props.root)
-    console.log(props.follow)
-    var table=props.follow
-    var row=[]
-    for (let index = 0; index < table.length; index++) {
-        if (props.root.includes(table[index].index.toString()) ) {
-            row.push(table[index])
-        }
-        
-    }
-    const hellw=Object.groupBy(row,(a)=>a.variable)
-    console.log(hellw)
-    for(const key in hellw){
-        console.log()
-        var state=''
-        console.log(key.length)
-        var keyy=hellw[key]
-        var regi={
-            source:props.root,
-            variable:key,
-            dest:''
-        }
-        for (let index = 0; index < hellw[key].length; index++) {
-           // console.log(keyy[index].follow)
-           if (regi.dest.includes()) {
-            
-           }
-            regi.dest+=keyy[index].follow
-        }
-        console.log(regi)
-    }
-   
+    const [dfa,sdfa]=useState([])
+    const [va,sva]=useState([])
+    useEffect(()=>{
+        sdfa(dfaloop(props.root,props.follow,[],[]))
+        console.log(dfa)
+    },[props])
+    console.log(dfa)
+    //console.log(lem)
 
     return(
-        <div></div>
+        <div>
+            Hello
+           
+            <State row={va}/>
+           
+            <button onClick={()=>{
+                console.log('clicker')
+                if (dfa.length>i) {
+                    sva(dfa[i++])
+                }    
+            }}>DFA</button>
+        </div>
     )
+    
 }
 export default DFA

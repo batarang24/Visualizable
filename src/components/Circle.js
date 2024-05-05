@@ -2,9 +2,9 @@ import '../style/circle.css'
 
 function Circle(props)
 {
-    console.log("I am circle margin",props.count)
+   
    return(
-        <div className="circle" style={{marginLeft:`${props.count}px`}}>
+        <div className="circle">
             <p className="text">{props.center}</p>
         </div>
    );

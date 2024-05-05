@@ -5,7 +5,7 @@ import New from "./New"
 
 function Noder(props)
 {
-   console.log(props.rooter)
+   console.log(props.follow)
    // <New child={props.node}/>
    
    var node=props.node
@@ -16,7 +16,7 @@ function Noder(props)
      
       {node!=undefined && <DFA root={props.rooter.first}  follow={props.follow}/>}
       <button onClick={()=>{
-
+        
       }}>First and follow</button>
     </div>
    ) 

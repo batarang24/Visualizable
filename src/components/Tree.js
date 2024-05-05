@@ -19,7 +19,7 @@ function Trees(props)
         var reg=regex(props.final)
         var variable=vary(props.final)
         var hell=reg.follow
-        console.log(hell.length)
+        //console.log(hell.length)
         for (let i = 1; i < hell.length; i++) {
 
             console.log('i am from hell')
@@ -36,9 +36,10 @@ function Trees(props)
         }
         
        sfollow(hells)
-       console.log(hells)
-        slamp(reg.kera)  
-        console.log(follow)
+       //console.log(hells)
+        slamp(reg.kera)
+        console.log(lamp)  
+       // console.log(follow)
        
     },[props.final])
     
