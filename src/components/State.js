@@ -1,5 +1,4 @@
 import { V2Example } from "../Help";
-import Circle from "./Circle";
 var real=[]
 function State(props)
 {

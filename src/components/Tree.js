@@ -4,11 +4,14 @@ import Real from "./Noder";
 import regex from "../models/Regex";
 import Noder from "./Noder";
 import vary from "../models/Variable";
+import Tree from "react-d3-tree";
 
 var i=0;
 
 function Trees(props)
 {
+    const[d,sd]=useState('visible')
+    const[initial,sini]=useState(true)
     const[lamp,slamp]=useState([])
     const[follow,sfollow]=useState([])
     const [node,snode]=useState()
@@ -46,13 +49,21 @@ function Trees(props)
     
     return(
         <div>
-            <button onClick={()=>{
+            <button className="button" style={{visibility:`${d}`}} onClick={()=>{
                if (lamp.length>i) {
                 snode(lamp[i++])
-               }      
+                
+               }  
+               else
+               {
+                sini(false)
+                sd('hidden')
+                
+                
+               }    
             }}>{butt}</button>
-          
-            <Noder node={node} follow={follow} rooter={lamp[lamp.length-1]}/>
+            
+            <Noder node={node} follow={follow} rooter={lamp[lamp.length-1]} initial={initial}/>
             
         </div> 
     )

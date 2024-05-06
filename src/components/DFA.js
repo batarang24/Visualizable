@@ -18,11 +18,10 @@ function DFA(props)
 
     return(
         <div>
-            Hello
-           
+
             <State row={va}/>
            
-            <button onClick={()=>{
+            <button className="button" onClick={()=>{
                 console.log('clicker')
                 if (dfa.length>i) {
                     sva(dfa[i++])

@@ -9,6 +9,7 @@ function New(props)
         
     ]
     data.push(props.child)
+    console.log(props.child)
    
     return(
         <div style={{width:'80vw',height:'80vh'}}>
